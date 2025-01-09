@@ -3,7 +3,7 @@ import requests
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, CallbackContext
 from telegram.ext import filters  # Falls du Version 20 oder höher verwendest
-
+# hallo martin
 # API-Schlüssel für OpenWeather
 WEATHER_API_KEY = replaceme  # Ersetze dies mit deinem OpenWeather API-Schlüssel
 TELEGRAM_API_TOKEN = replaceme  # Ersetze dies mit deinem Telegram Bot Token
