@@ -12,4 +12,7 @@ WT_API_KEY=youropenweatherapikeyhere
 
 
 ## Run
-for testing purposes you 
+for testing purposes you can simpliy run:
+```
+python3 telegram_bot.py
+```
