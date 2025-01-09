@@ -9,6 +9,7 @@ Create a file named '.env' that takes the following form:\
 TG_API_TOK=yourtelegramapitokenhere
 WT_API_KEY=youropenweatherapikeyhere
 ```
+These tokens will be imported to our scripts.
 
 
 ## Run
