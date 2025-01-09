@@ -1,12 +1,15 @@
 import logging
 import requests
+import os
+from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, CallbackContext
 from telegram.ext import filters  # Falls du Version 20 oder höher verwendest
-# hallo martin
-# API-Schlüssel für OpenWeather
-WEATHER_API_KEY = replaceme  # Ersetze dies mit deinem OpenWeather API-Schlüssel
-TELEGRAM_API_TOKEN = replaceme  # Ersetze dies mit deinem Telegram Bot Token
+# get environment variable from dotenv file
+load_dotenv()
+TELEGRAM_API_TOKEN = os.getenv('TG_API_TOK')
+WEATHER_API_KEY = os.getenv('WT_API_KEY')
+
 
 # Logging konfigurieren
 logging.basicConfig(
