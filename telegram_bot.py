@@ -21,8 +21,9 @@ logger = logging.getLogger(__name__)
 # Funktion, um Wetterdaten von OpenWeather zu holen
 def get_weather(lat, lon):
     url = f"http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={WEATHER_API_KEY}&units=metric&lang=de"
+    logger.info(url)
     response = requests.get(url)
-    
+    logger.info(response)
     if response.status_code == 200:
         data = response.json()
         
