@@ -9,7 +9,9 @@ Create a file named '.env' that takes the following form:\
 TG_API_TOK=yourtelegramapitokenhere
 WT_API_KEY=youropenweatherapikeyhere
 ```
-These tokens will be imported to our scripts.
+These tokens will be imported to our scripts. You can obtain Tokens here: \
+- Openweather: https://home.openweathermap.org/
+- Telegram: Follow instructions from https://core.telegram.org/bots/tutorial
 
 
 ## Run
