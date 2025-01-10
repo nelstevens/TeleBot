@@ -54,7 +54,9 @@ async def start(update: Update, context: CallbackContext):
 async def location_handler(update: Update, context: CallbackContext):
     if update.message.location:
         lat = update.message.location.latitude
+        logger.info(lat)
         lon = update.message.location.longitude
+        logger.info(lon)
         weather_info = get_weather(lat, lon)
         await update.message.reply_text(weather_info)
     else:
