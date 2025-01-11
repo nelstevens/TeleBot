@@ -1,5 +1,5 @@
-# Weatherbot
-get all weatherinfo you need for your hike by simply asking your telegram bot
+# Telegram Bot
+A collection of helpful tasks a telegram bot can help you with.
 
 ## installation
 First install python 3.11 or newer. Then install dependencies from requirements.txt:\
@@ -17,5 +17,5 @@ These tokens will be imported to our scripts. You can obtain Tokens here:
 ## Run
 for testing purposes you can simpliy run:
 ```
-python3 telegram_bot.py
+python3 main.py
 ```
