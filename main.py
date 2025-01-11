@@ -14,7 +14,13 @@ TELEGRAM_API_TOKEN = os.getenv('TG_API_TOK')
 
 # Start-Befehl
 async def start(update: Update, context: CallbackContext):
-    await update.message.reply_text("Hallo! Sende mir einen Befehl (/...), damit ich dir helfen kann")
+    await update.message.reply_text(
+        """Hallo! Sende mir einen Befehl (/...), damit ich dir helfen kann.\n
+        Folgende Befehele sind möglich:\n
+        /weather: Dieser Befehl zeigt dir diverse Wetterdaten für deinen Standort an.
+        """
+        
+    )
 
 # Hauptfunktion
 def main():
