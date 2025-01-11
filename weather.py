@@ -43,9 +43,6 @@ def get_weather(lat, lon):
     else:
         return "Entschuldigung, ich konnte die Wetterdaten nicht abrufen. Bitte versuche es später erneut."
 
-# Start-Befehl
-async def start(update: Update, context: CallbackContext):
-    await update.message.reply_text("Hallo! Sende mir deinen Standort, um das Wetter zu erfahren.")
 
 # Funktion für Standort-Nachrichten
 async def location_handler(update: Update, context: CallbackContext):

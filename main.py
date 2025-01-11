@@ -1,9 +1,10 @@
 import os
 from dotenv import load_dotenv
-from telegram.ext import Application, CommandHandler, MessageHandler
+from telegram import Update
+from telegram.ext import Application, CommandHandler, MessageHandler, CallbackContext
 from telegram.ext import filters
 # import from local script
-from weather import get_weather, location_handler, start
+from weather import get_weather, location_handler
 # get environment variable from dotenv file
 load_dotenv()
 
@@ -11,6 +12,9 @@ load_dotenv()
 TELEGRAM_API_TOKEN = os.getenv('TG_API_TOK')
 
 
+# Start-Befehl
+async def start(update: Update, context: CallbackContext):
+    await update.message.reply_text("Hallo! Sende mir deinen Standort, um das Wetter zu erfahren.")
 
 # Hauptfunktion
 def main():
