@@ -1,10 +1,10 @@
 import os
 from dotenv import load_dotenv
 from telegram import Update
-from telegram.ext import Application, CommandHandler, MessageHandler, CallbackContext
+from telegram.ext import Application, CallbackContext, CommandHandler
 from telegram.ext import filters
 # import from local script
-from weather import get_weather, location_handler, weather_start
+from weather import get_weather, location_handler, weather_start, weather_conv_handler
 # get environment variable from dotenv file
 load_dotenv()
 
@@ -24,8 +24,7 @@ def main():
     # start
     application.add_handler(CommandHandler("start", start))
     # Handlers for weather
-    application.add_handler(CommandHandler("weather", weather_start))
-    application.add_handler(MessageHandler(filters.LOCATION, location_handler))
+    application.add_handler(weather_conv_handler)
     # Bot starten
     application.run_polling()
 
