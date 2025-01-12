@@ -3,8 +3,9 @@ from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Application, CallbackContext, CommandHandler
 from telegram.ext import filters
-# import from local script
+# import from local scripts
 from weather import get_weather, location_handler, weather_start, weather_conv_handler
+from bus import bus_start
 # get environment variable from dotenv file
 load_dotenv()
 
@@ -17,7 +18,8 @@ async def start(update: Update, context: CallbackContext):
     await update.message.reply_text(
         """Hallo! Sende mir einen Befehl (/...), damit ich dir helfen kann.\n
         Folgende Befehele sind möglich:\n
-        /weather: Dieser Befehl zeigt dir diverse Wetterdaten für deinen Standort an.
+        /weather: Dieser Befehl zeigt dir diverse Wetterdaten für deinen Standort an.\n
+        /bus: Dieser Befehl zeigt dir die nächsten Busabfahrten für Breitloo und TBD
         """
         
     )
@@ -31,6 +33,8 @@ def main():
     application.add_handler(CommandHandler("start", start))
     # Handlers for weather
     application.add_handler(weather_conv_handler)
+    # Handler for bus
+    application.add_handler(CommandHandler('bus', bus_start))
     # Bot starten
     application.run_polling()
 
