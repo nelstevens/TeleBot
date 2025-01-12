@@ -19,7 +19,6 @@ def get_busdepartures(station_name: str):
     response = requests.get(url).json()
     logger.info(response)
     sb = response["stationboard"]
-    flt = [x for x in sb if x['number'] == '66' and x['to'] in ('Enge', 'Zürich, Morgental')]
     strs = []
     for x in sb:
         if x['number'] == '66' and x['to'] in ('Enge', 'Zürich, Morgental'):
